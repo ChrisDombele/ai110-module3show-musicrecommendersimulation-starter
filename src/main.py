@@ -13,10 +13,23 @@ from recommender import load_songs, recommend_songs
 
 
 def main() -> None:
-    songs = load_songs("data/songs.csv") 
+    songs = load_songs("data/songs.csv")
+    for s in songs:
+        print(f"{s['id']:>2}. {s['title']} - {s['artist']} ({s['genre']}/{s['mood']})")
 
-    # Starter example profile
-    user_prefs = {"genre": "pop", "mood": "happy", "energy": 0.8}
+
+    # Taste profile: a "late-night study" listener who wants calm, mostly acoustic lofi.
+    # Categorical keys are matched exactly; numeric targets are scored by closeness
+    # (1 - |song value - target|), with tempo normalized by the 60-152 BPM range.
+    user_prefs = {
+        "favorite_genre": "lofi",
+        "favorite_mood": "chill",
+        "target_energy": 0.40,
+        "likes_acoustic": True,        # treated as target acousticness of ~0.8
+        "target_valence": 0.60,        # neutral-to-slightly-positive mood
+        "target_danceability": 0.60,
+        "target_tempo": 80,            # BPM
+    }
 
     recommendations = recommend_songs(user_prefs, songs, k=5)
 
