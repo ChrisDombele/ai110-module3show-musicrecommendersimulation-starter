@@ -2,15 +2,6 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
-
-Your goal is to:
-
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
 YouTune 1.0 is a command-line music recommender. It loads a 20-song catalog, scores every song against a listener's taste profile (favorite genre, favorite mood, target energy and acoustic preference), and prints the top 5 matches with the reasons behind each score. It is content-based: it compares song attributes to stated preferences and uses no listening history. Testing with standard and adversarial profiles showed that it works well when preferences agree, but genre and mood labels can outvote the numeric preferences when they conflict.
 
 ---
