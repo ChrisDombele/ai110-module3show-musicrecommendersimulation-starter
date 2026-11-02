@@ -103,15 +103,25 @@ You can add more tests in `tests/test_recommender.py`.
 
 ## Sample Recommendation Output
 
-Paste a sample of your recommender's output here as a text block so a reader can see what it produces:
+Output from `python src/main.py` for the default taste profile (`favorite_genre="lofi"`, `favorite_mood="chill"`, `target_energy=0.40`, `likes_acoustic=True`) against the 20-song catalog:
 
 ```
-# e.g.:
-# User profile: genre=indie, mood=chill, energy=low
-# Recommendations:
-#   1. ...
-#   2. ...
-#   3. ...
+Top recommendations:
+
+Midnight Coding - Score: 4.92
+Because: genre match: lofi (+2.00); mood match: chill (+1.00); energy closeness: 0.42 vs target 0.40 (+1.47); acousticness closeness: 0.71 vs target 0.80 (+0.45)
+
+Library Rain - Score: 4.89
+Because: genre match: lofi (+2.00); mood match: chill (+1.00); energy closeness: 0.35 vs target 0.40 (+1.42); acousticness closeness: 0.86 vs target 0.80 (+0.47)
+
+Focus Flow - Score: 3.99
+Because: genre match: lofi (+2.00); energy closeness: 0.40 vs target 0.40 (+1.50); acousticness closeness: 0.78 vs target 0.80 (+0.49)
+
+Spacewalk Thoughts - Score: 2.76
+Because: mood match: chill (+1.00); energy closeness: 0.28 vs target 0.40 (+1.32); acousticness closeness: 0.92 vs target 0.80 (+0.44)
+
+Coffee Shop Stories - Score: 1.91
+Because: energy closeness: 0.37 vs target 0.40 (+1.46); acousticness closeness: 0.89 vs target 0.80 (+0.46)
 ```
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or demo video link here -->
